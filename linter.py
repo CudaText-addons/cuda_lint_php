@@ -10,7 +10,7 @@ class PHP(Linter):
     cmd = 'php -l -n -d display_errors=On -d log_errors=Off'
     regex = (
         r'^(?:Parse|Fatal) (?P<error>error):(\s*(?P<type>parse|syntax) error,?)?\s*'  # nopep8
-        r'(?P<message>(?:unexpected \'(?P<near>[^\']+)\')?.*) in - on line (?P<line>\d+)')  # nopep8
+        r'(?P<message>(?:unexpected \'(?P<near>[^\']+)\')?.*) in .+? on line (?P<line>\d+)')  # nopep8
     error_stream = util.STREAM_STDOUT
 
     def split_match(self, match):
